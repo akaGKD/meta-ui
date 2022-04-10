@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <metaButton>test</metaButton>
+    <metaButton type="normal">normal</metaButton>
+    <metaButton type="primary">primary</metaButton>
+    <metaButton type="success">success</metaButton>
   </div>
 </template>
 
