@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <metaButton type="normal">normal</metaButton>
-    <metaButton type="primary">primary</metaButton>
-    <metaButton type="success">success</metaButton>
-    <metaButton type="danger">danger</metaButton>
-    <metaButton type="warning">warning</metaButton>
-    <metaButton type="info">info</metaButton>
+    <meta-button type="normal">normal</meta-button>
+    <meta-button type="primary">primary</meta-button>
+    <meta-button type="success">success</meta-button>
+    <meta-button type="danger">danger</meta-button>
+    <meta-button type="warning">warning</meta-button>
+    <meta-button type="info">info</meta-button>
     <br />
-    <metaButton size="large" type="normal">large</metaButton>
-    <metaButton size="medium" type="normal">medium</metaButton>
-    <metaButton size="small" type="normal">small</metaButton>
+    <meta-button size="large" type="normal">large</meta-button>
+    <meta-button size="medium" type="normal">medium</meta-button>
+    <meta-button size="small" type="normal">small</meta-button>
     <br />
-    <metaButton type="normal" round>round</metaButton>
-    <metaButton type="primary" round>round</metaButton>
-    <metaButton type="success" round>round</metaButton>
-    <metaButton type="danger" round>danger</metaButton>
-    <metaButton type="warning" round>warning</metaButton>
-    <metaButton type="info" round>info</metaButton>
+    <meta-button type="normal" round>round</meta-button>
+    <meta-button type="primary" round>round</meta-button>
+    <meta-button type="success" round>round</meta-button>
+    <meta-button type="danger" round>danger</meta-button>
+    <meta-button type="warning" round>warning</meta-button>
+    <meta-button type="info" round>info</meta-button>
     <br />
-    <metaButton type="normal" disabled>normal</metaButton>
-    <metaButton type="primary" disabled>primary</metaButton>
-    <metaButton type="success" disabled>success</metaButton>
-    <metaButton type="danger" disabled>danger</metaButton>
-    <metaButton type="warning" disabled>warning</metaButton>
-    <metaButton type="info" disabled>info</metaButton>
+    <meta-button type="normal" disabled>normal</meta-button>
+    <meta-button type="primary" disabled>primary</meta-button>
+    <meta-button type="success" disabled>success</meta-button>
+    <meta-button type="danger" disabled>danger</meta-button>
+    <meta-button type="warning" disabled>warning</meta-button>
+    <meta-button type="info" disabled>info</meta-button>
   </div>
 </template>
 

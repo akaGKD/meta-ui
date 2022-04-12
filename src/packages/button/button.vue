@@ -1,12 +1,17 @@
 <template>
-  <button class="meta-button" v-on="$listeners" :class="buttonClass">
+  <button
+    class="meta-button"
+    @click="handleClick"
+    v-on="$listeners"
+    :class="buttonClass"
+  >
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
-  name: "metaButton",
+  name: "meta-button",
   props: {
     type: {
       type: String,
@@ -29,7 +34,7 @@ export default {
         return value === "large" || value === "medium" || value === "small";
       },
     },
-    disabled:Boolean,
+    disabled: Boolean,
     plain: Boolean,
     round: Boolean,
   },
@@ -44,6 +49,12 @@ export default {
       };
     },
   },
+  methods: {
+    handleClick(e) {
+      if (this.disabled) return;
+      this.$emit("click", e);
+    },
+  },
 };
 </script>
 
@@ -54,17 +65,16 @@ export default {
   margin: 5px 5px;
   outline: none;
   text-align: center;
-  border:0;
+  border: 0;
 }
 .meta-button.is-round {
   border-radius: 20px;
 }
 
-.meta-button.is-disabled {
+.meta-button.is-disabled{
   opacity: 0.3;
-  pointer-events:none
+  cursor: not-allowed;
 }
-
 
 .meta-button-normal {
   background-color: #eae9e9;
