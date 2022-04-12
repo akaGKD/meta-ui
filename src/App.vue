@@ -17,11 +17,20 @@
     <metaButton type="danger" round>danger</metaButton>
     <metaButton type="warning" round>warning</metaButton>
     <metaButton type="info" round>info</metaButton>
+    <br />
+    <metaButton type="normal" disabled>normal</metaButton>
+    <metaButton type="primary" disabled>primary</metaButton>
+    <metaButton type="success" disabled>success</metaButton>
+    <metaButton type="danger" disabled>danger</metaButton>
+    <metaButton type="warning" disabled>warning</metaButton>
+    <metaButton type="info" disabled>info</metaButton>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style>

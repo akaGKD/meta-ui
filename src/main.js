@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import metaButton from './button/button.vue'
+import metaButton from './packages/button/index.js'
 
 Vue.config.productionTip = false
 
-Vue.component(metaButton.name,metaButton)
+Vue.use(metaButton)
 
 new Vue({
   render: h => h(App),

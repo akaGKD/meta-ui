@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="meta-button"
-    :class="[typebinding, { 'is-round': round, 'is-plain': plain }]"
-    @click="popup"
-  >
+  <button class="meta-button" v-on="$listeners" :class="buttonClass">
     <slot></slot>
   </button>
 </template>
@@ -14,15 +10,15 @@ export default {
   props: {
     type: {
       type: String,
-      default: "normal",
+      default: "default",
       validator(value) {
         return (
-          value === "info" ||
-          value === "primary" ||
           value === "normal" ||
+          value === "primary" ||
           value === "success" ||
-          value === "danger" ||
-          value === "warning"
+          value === "warning" ||
+          value === "info" ||
+          value === "danger"
         );
       },
     },
@@ -33,28 +29,19 @@ export default {
         return value === "large" || value === "medium" || value === "small";
       },
     },
-    plain: {
-      type: Boolean,
-      default: false,
-    },
-    round: {
-      type: Boolean,
-      default: false,
-    },
+    disabled:Boolean,
+    plain: Boolean,
+    round: Boolean,
   },
   computed: {
-    typebinding() {
+    buttonClass() {
       return {
         [`meta-button-${this.type}`]: this.type,
         [`meta-button-size-${this.size}`]: this.size,
+        ["is-round"]: this.round,
+        ["is-plain"]: this.plain,
+        ["is-disabled"]: this.disabled,
       };
-    },
-  },
-  methods: {
-    popup() {
-      if (this.type == "normal") {
-        alert("normal button");
-      }
     },
   },
 };
@@ -63,13 +50,21 @@ export default {
 <style scoped>
 .meta-button {
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin: 5px 5px;
-  border: 0;
+  outline: none;
+  text-align: center;
+  border:0;
 }
 .meta-button.is-round {
   border-radius: 20px;
 }
+
+.meta-button.is-disabled {
+  opacity: 0.3;
+  pointer-events:none
+}
+
 
 .meta-button-normal {
   background-color: #eae9e9;
