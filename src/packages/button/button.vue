@@ -1,8 +1,9 @@
 <template>
   <button
+    v-bind="$attrs"
     class="meta-button"
     @click="handleClick"
-    v-on="$listeners"
+    v-on="listeners"
     :class="buttonClass"
   >
     <slot></slot>
@@ -48,6 +49,10 @@ export default {
         ["is-disabled"]: this.disabled,
       };
     },
+    listeners() {
+      const { click, ...listeners } = this.$listeners || {}; // eslint-disable-line no-unused-vars
+      return listeners;
+    },
   },
   methods: {
     handleClick(e) {
@@ -71,7 +76,7 @@ export default {
   border-radius: 20px;
 }
 
-.meta-button.is-disabled{
+.meta-button.is-disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
