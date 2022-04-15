@@ -35,9 +35,18 @@ export default {
         return value === "large" || value === "medium" || value === "small";
       },
     },
-    disabled: Boolean,
-    plain: Boolean,
-    round: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    plain: {
+      type: Boolean,
+      default: false,
+    },
+    round: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     buttonClass() {
@@ -119,7 +128,7 @@ export default {
 }
 
 .meta-button-danger:hover {
-  background-color: #ff8888;
+  background-color: #ff7373;
 }
 
 .meta-button-warning {

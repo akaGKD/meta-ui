@@ -24,13 +24,13 @@
     <meta-button type="danger" disabled>danger</meta-button>
     <meta-button type="warning" disabled>warning</meta-button>
     <meta-button type="info" disabled>info</meta-button>
+    <br />
+    <meta-switch></meta-switch>
   </div>
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style>
