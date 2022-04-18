@@ -1,37 +1,31 @@
 <template>
-  <div id="app">
-    <meta-button type="normal">normal</meta-button>
-    <meta-button type="primary">primary</meta-button>
-    <meta-button type="success">success</meta-button>
-    <meta-button type="danger">danger</meta-button>
-    <meta-button type="warning">warning</meta-button>
-    <meta-button type="info">info</meta-button>
-    <br />
-    <meta-button size="large" type="normal">large</meta-button>
-    <meta-button size="medium" type="normal">medium</meta-button>
-    <meta-button size="small" type="normal">small</meta-button>
-    <br />
-    <meta-button type="normal" round>round</meta-button>
-    <meta-button type="primary" round>round</meta-button>
-    <meta-button type="success" round>round</meta-button>
-    <meta-button type="danger" round>danger</meta-button>
-    <meta-button type="warning" round>warning</meta-button>
-    <meta-button type="info" round>info</meta-button>
-    <br />
-    <meta-button type="normal" disabled>normal</meta-button>
-    <meta-button type="primary" disabled>primary</meta-button>
-    <meta-button type="success" disabled>success</meta-button>
-    <meta-button type="danger" disabled>danger</meta-button>
-    <meta-button type="warning" disabled>warning</meta-button>
-    <meta-button type="info" disabled>info</meta-button>
-    <br />
-    <meta-switch></meta-switch>
+  <div id="app" class="app">
+    <div class="container">
+    <router-link to="/button">button</router-link>
+    <router-link to="/switch">switch</router-link>
+    </div>
+    <router-view></router-view>
   </div>
-</template>
+</template> 
 
 <script>
-export default {};
+export default {
+ 
+};
 </script>
 
 <style>
+*{
+  text-decoration: none;
+}
+
+.app{
+  display: flex;
+  flex-direction: row;
+}
+
+.container{
+  display:flex;
+  flex-direction: column;
+}
 </style>

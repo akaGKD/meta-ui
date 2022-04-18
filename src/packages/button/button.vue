@@ -16,7 +16,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: "default",
+      default: "normal",
       validator(value) {
         return (
           value === "normal" ||
