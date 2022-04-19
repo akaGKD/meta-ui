@@ -1,74 +1,70 @@
 <template>
-  <div class="meta-switch" @click="handleClick">
-    <input id="switch" type="checkbox" />
-    <label for="switch" @click="handleClick"></label>
+  <div class="meta-switch">
+    <input :class="classes" type="checkbox" readonly/>
   </div>
 </template>
 
 <script>
 export default {
   name: "meta-switch",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    classes(){
+      return{
+        ["is-disabled"]: this.disabled
+      }
+    }
+  },
 };
 </script>
 
 <style scoped>
+.is-disabled{
+  opacity: 0.3;
+  cursor:not-allowed;
+}
 .meta-switch {
-  display: block;
-  cursor: pointer;
-  height: 15px;
-  width: 35px;
+  height: 25px;
+  width: 45px;
+  margin-left: 10px;
 }
+
 .meta-switch input {
-  display: none;
-}
-
-label {
-  display: block;
-  background-color: #ff2727;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  border-radius: 25px;
-  border: 2px solid transparent;
-}
-
-label:before {
-  content: "";
-  display: block;
-  border-radius: 25px;
-  height: 100%;
-  width: 15px;
-  background-color: #fff;
-  opacity: 1;
-  transition: border-color 0.3s, background-color 0.3s;
-}
-
-label:after {
   position: relative;
-  top: -15px;
-  left: 20px;
+  cursor: pointer;
+  top: 2px;
+  width: 45px;
+  height: 22px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-color: rgb(183, 183, 183);
+  -webkit-appearance: none;
+  transition: all 0.4s;
+}
+
+.meta-switch input:checked {
+  background-color: rgb(2, 176, 245);
+}
+
+.meta-switch input::after {
   content: "";
-  display: block;
-  border-radius: 25px;
-  height: 100%;
-  width: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
   background-color: white;
-  opacity: 0;
-  transition: border-color 0.3s, background-color 0.3s;
+  transition: all 0.4s;
 }
 
-/*选中后，选中样式显示*/
-#switch:checked ~ label:after {
-  opacity: 1;
-}
-
-/*选中后，未选中样式消失*/
-#switch:checked ~ label:before {
-  opacity: 0;
-}
-
-/*选中后label的背景色改变*/
-#switch:checked ~ label {
-  background-color: #53d879;
+.meta-switch input:checked::after {
+  left: 23px;
+  background-color: white;
 }
 </style>

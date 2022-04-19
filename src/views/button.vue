@@ -46,12 +46,11 @@ export default {
 .meta-Button{
   display:flex;
   flex-direction:column;
-  margin-left:50px
+  margin-left:50px;
 }
 
 .meta-Button.main{
-  display:flex;
-  flex-direction:row;
+  float: left;
 }
 
 </style>
